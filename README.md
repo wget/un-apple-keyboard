@@ -20,6 +20,23 @@ The first 3 aforementioned features are brought to you using the default linux k
 
 The last one is provided by providing a mapping to  ̀keyfuzz`.
 
+## Known bugs / to be developped
+
+* Enable numkey automatically
+* KDE can recognize F16 to F18, but for some reason F19 is not catched by Kwin. showkey is recognizing it though.
+* The keyfuzz rules are generated like this
+
+```
+# map F13 to SYSRQ
+458856 99
+
+where 458856 = 0x00070068 in Hex format and 68 represents the USB HID usage ID for F13 in Hex
+where 99 represents the SYSRQ key as listed in /usr/include/linux/input.h
+```
+[src.](https://arstechnica.com/civis/viewtopic.php?p=21847635&sid=bd7e02f609a79d05414d95105c34e6e8#p21847635)
+
+* When using KDE, the features 1, 2, 3 can be simuled using keyboard options. However, these will only be applied in the GUI, TTY is not concerned. See [here](http://fsymbols.com/keyboard/linux/choosers/) to define key chooser using KDE (`Compose` key and explanatin with key levels).
+
 ## Name
 
 [The `un-` prefix is used in English to express the contrary, the opposite, the sense "not"](https://en.wiktionary.org/wiki/un-#English). This is what this package does: with it, your keyboard is not an Apple keyboard anymore.
